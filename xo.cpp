@@ -92,6 +92,7 @@ int main()
       
       state();
       makeMove();
+      system("cls");
       ct++;
    }
    for (int i = 0; i < 5; i++)
@@ -99,6 +100,7 @@ int main()
        
       state();
       makeMove();
+      system("cls");
       if (x = won()) 
       {
       state();
