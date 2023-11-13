@@ -66,18 +66,17 @@ void makeMove()
    a[(x-1)*3 + y] = (ct % 2 == 1)  ? 'X' : 'O';
 }
 
+//Checks if a player has won
 short int won()
 { 
-   char check = (ct % 2 == 1) ? 'X' : 'O';
-
    for (int i = 0; i < 3 ; i++)
    {
-      if (a[3*i + 1] == check && a[3*i + 2] == check && a[3*i + 3] == check || a[3*0 + i + 1] == check && a[3*1 + i + 1] == check && a[3*2 + i + 1] == check) 
+      if (a[3*i + 1] == a[3*i + 2] &&  a[3*i + 2] == a[3*i + 3] || a[3*0 + i + 1] == a[3*1 + i + 1] &&  a[3*1 + i + 1] == a[3*2 + i + 1]) 
       {
          return (ct % 2 == 1) ? 1 : 2;
       }
    }
-   if (a[1] == check && a[5] == check && a[9] == check || a[3] == check && a[5] == check && a[7] == check)
+   if (a[1] == a[5] && a[5] == a[9] || a[3] == a[5] && a[5] == a[7])
    {
       return (ct % 2 == 1) ? 1 : 2;
    }
